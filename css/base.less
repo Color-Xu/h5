@@ -1,0 +1,208 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent
+}
+li, ul {
+	list-style: none
+}
+html {
+	font: 14px 'Helvetica Neue', 'PingFang SC', STHeitiSC-Light, Helvetica, microsoft yahei, Arial;
+	-webkit-text-size-adjust: 100%
+}
+body, html {
+	max-width:640px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto
+}
+a {
+	text-decoration: none;
+	color: inherit
+}
+a:active, a:hover {
+	outline: 0
+}
+.cen{
+    text-align: center;
+}
+.delay{
+    animation-delay:1s;
+    -webkit-animation-delay:1s;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+}
+.swiperW{
+    overflow:hidden;
+    position:relative;
+    height: 100%;
+    .swiper{
+        height:100%;
+        -webkit-transition:all .3s ease;
+        transition:all .3s ease;
+        .animated{
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        .item{
+            float:left;
+            position:relative;
+            height:100%;
+            &.active{
+                .animated{
+                    -webkit-animation-fill-mode:both;
+                    animation-fill-mode:both;
+                    opacity:1
+                }
+            }
+            &:not(.active){
+                .animated{
+                    -webkit-animation:none;
+                    animation:none;
+                    opacity:0;
+                }
+            }
+            .pg1{
+                img{
+                    width: 7.328125rem;
+                    margin-top: 2.8125rem;
+                }
+                p{
+                    font-size: 0.4rem;
+                    color: #fff;
+                    margin-top: 0.3125rem;
+                }
+            }
+            .pg3{
+                .img{
+                    height: 95%;
+                    position: relative;
+                    img{
+                        height: 100%;
+                        display: block;
+                    }
+                }
+                .list{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    li{
+                        width: 100%;
+                        height: 50%;
+                        a{
+                            display: block;
+                            width: 50%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.swiperW2{
+    position: relative;
+    .item{
+        background: url(../img/bg4.png) center bottom no-repeat;
+        background-size: cover;
+        .cont{
+            width: 7.046875rem;
+            height: 11.9375rem;
+            background: url(../img/bg4-1.png) no-repeat;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+            .title{
+                img{
+                    width: 5.765625rem;
+                    margin-top: -2rem;
+                    margin-left: 0.5rem;
+                }
+                p{
+                    font-size: 0.5rem;
+                    margin-top: -1.3rem;
+                    span{
+                        display: block;
+                        font-size: 0.24rem;
+                    }
+                }
+            }
+            .text{
+                font-size: 0.4rem;
+                width: 80%;
+                margin: 1.8rem auto 0 auto;
+                line-height: 1.8;
+            }
+        }
+    }
+    .button{
+        position: absolute;
+        top: 50%;
+        width: 0.359375rem;
+        img{
+            width: 100%;
+        }
+        &.prev{
+            left: 0.234375rem;
+        }
+        &.next{
+            right: 0.234375rem;
+        }
+    }
+}
+.fixed{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: #131846;
+    .close{
+        position: absolute;
+        right: 4%;
+        top: 2%;
+        font-size: 20px;
+        color: #fff;
+    }
+}
+/*动画*/
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}

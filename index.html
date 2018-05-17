@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<script type="text/javascript" src="./js/flexible.js"></script>
+	<title>联创中心</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/flex.css">
+	<script type="text/javascript" src="./js/swiper.min.js"></script>
+</head>
+<body>
+	<div class="swiperW">
+		<ul class="swiper" id="swiper">
+			<li class="item item1" style="background: url(img/bg1.png) center top no-repeat;background-size: cover">
+				<div class="wrap cen pg1">
+					<img src="img/img1-1.png" class="animated fadeInUp">
+					<p class="animated delay fadeInUp">
+						广东省公安厅 | 华为技术有限公司
+					</p>
+				</div>
+			</li>
+			<li class="item item1" style="background: #131846">
+				<div class="wrap" flex="cross:center">
+					<iframe src="pano.html" style="width: 100%;height: 60%;border: none;"></iframe>
+				</div>
+			</li>
+			<li class="item item1" style="background: url(img/bg3.png) center top no-repeat;background-size: cover">
+				<div class="wrap pg3" flex="main:center cross:center">
+					<div class="img">
+						<img src="img/img3-1.png">
+						<ul class="list">
+							<li flex="main:center cross:center">
+								<a href="javascript:videoPlay('movie.mp4');"></a>
+								<a href="javascript:videoPlay('movie.mp4');"></a>
+							</li>
+							<li flex="main:center cross:center">
+								<a href="javascript:videoPlay('movie.mp4');"></a>
+								<a href="javascript:videoPlay('movie.mp4');"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="item item1">
+				<div class="swiperW swiperW2">
+					<ul class="swiper" id="swiper2">
+						<li class="item item2">
+							<div class="wrap" flex="main:center cross:center">
+								<div class="cont">
+									<div class="title">
+										<img src="img/img4-1.png">
+										<p>大数据工程<span>BIG DATA PROJECT</span></p>
+									</div>
+									<div class="text">
+										<p>文字描述文字描述文字描述文字描述</p>
+										<p>文字描述</p>
+										<p>文字描述</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item item2">
+							<div class="wrap" flex="main:center cross:center">
+								<div class="cont">
+									<div class="title">
+										<img src="img/img4-2.png">
+										<p>警务云工程<span>POLICE CLOUD ENGINEERING</span></p>
+									</div>
+									<div class="text">
+										<p>文字描述文字描述文字描述文字描述</p>
+										<p>文字描述</p>
+										<p>文字描述</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item item2">
+							<div class="wrap" flex="main:center cross:center">
+								<div class="cont">
+									<div class="title">
+										<img src="img/img4-3.png">
+										<p>视频云工程<span>VIDEO CLOUD ENGINEERING</span></p>
+									</div>
+									<div class="text">
+										<p>文字描述文字描述文字描述文字描述</p>
+										<p>文字描述</p>
+										<p>文字描述</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item item2">
+							<div class="wrap" flex="main:center cross:center">
+								<div class="cont">
+									<div class="title">
+										<img src="img/img4-3.png">
+										<p>云网端工程<span>VIDEO CLOUD ENGINEERING</span></p>
+									</div>
+									<div class="text">
+										<p>文字描述文字描述文字描述文字描述</p>
+										<p>文字描述</p>
+										<p>文字描述</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<a href="javascript:;" class="button prev"><img src="img/prev.png"></a>
+					<a href="javascript:;" class="button next"><img src="img/next.png"></a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 视频播放弹窗 -->
+	<div class="fixed">
+		<a href="javascript:;" class="close">X</a>
+		<div class="wrap" flex="cross:center">
+			<video width="100%" height="240" controls autoplay>
+				<source src="./movie.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+</body>
+	<script>
+		// 滑动配置
+		var swiper = new Swiper({
+            container:'.swiperW #swiper',
+            item:'.item1',
+            direction: 'vertical'
+        });
+        var swiper2 = new Swiper({
+            container:'.swiperW2 #swiper2',
+            item:'.item2',
+            prev:'.prev',
+            next:'.next',
+            direction: 'horizontal'
+        });
+        swiper.on('swiped',function(){
+        	swiper2.go(0);
+        });
+        // 视频弹窗显示
+        function videoPlay(vid){
+        	document.querySelector('.fixed').style.display="block";
+        	document.querySelector('.fixed video').setAttribute('src',vid);
+        }
+        // 点击X关闭视频弹窗
+        document.querySelector('.fixed .close').onclick=function(){
+        	document.querySelector('.fixed').style.display='none';
+        };
+	</script>
+</html>

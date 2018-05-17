@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>联创中心</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/flex.css">
+</head>
+<body>
+	<div class="fixed" style="display: block;">
+		<a href="javascript:;" class="close">X</a>
+		<div class="wrap" flex="cross:center">
+			<video width="100%" height="200" controls autoplay>
+				<source src="./movie.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+</body>
+	<script>
+		// 点击X关闭视频弹窗
+        document.querySelector('.fixed .close').onclick=function(){
+        	location.href="pano.html";
+        };
+	</script>
+</html>
