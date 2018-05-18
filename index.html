@@ -26,6 +26,13 @@
 			</li>
 			<li class="item item1" style="background: #131846">
 				<div class="wrap" flex="cross:center">
+					<video id="logoV"width="100%" height="240" controls autoplay x5-playsinline playsinline webkit-playsinline poster>
+						<source src="logo.mp4" type="video/mp4">
+					</video>
+				</div>
+			</li>
+			<li class="item item1" style="background: #131846">
+				<div class="wrap" flex="cross:center">
 					<iframe src="pano.html" style="width: 100%;height: 60%;border: none;"></iframe>
 				</div>
 			</li>
@@ -141,9 +148,17 @@
             direction: 'horizontal'
         });
         // swiper.go(3);
-        swiper.on('swiped',function(){
+        var swipedIndex=0;
+        swiper.on('swiped',function(i){
+        	swipedIndex=i;
         	swiper2.go(0);
         });
+        // ios自动播放
+        /*document.ontouchstart=function(){
+        	if(swipedIndex==0 || swipedIndex==2){
+        		document.querySelector('#logoV').play();
+        	}
+    	};*/
         // 视频弹窗显示
         function videoPlay(vid){
         	document.querySelector('.fixed').style.display="block";
