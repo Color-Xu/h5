@@ -27,7 +27,7 @@
 			<li class="item item1" style="background: #131846">
 				<div class="wrap" flex="cross:center">
 					<video id="logoV"width="100%" height="240" controls autoplay x5-playsinline playsinline webkit-playsinline poster="img/play.png">
-						<source src="logo.mp4" type="video/mp4">
+						<source src="video/logo.mp4" type="video/mp4">
 					</video>
 				</div>
 			</li>
@@ -46,12 +46,12 @@
 						<img src="img/img3-1.png">
 						<ul class="list">
 							<li flex="main:center cross:center">
-								<a href="javascript:videoPlay('logo.mp4');"></a>
-								<a href="javascript:videoPlay('logo.mp4');"></a>
+								<a href="javascript:videoPlay('video/logo.mp4');"></a>
+								<a href="javascript:videoPlay('video/logo.mp4');"></a>
 							</li>
 							<li flex="main:center cross:center">
-								<a href="javascript:videoPlay('logo.mp4');"></a>
-								<a href="javascript:videoPlay('logo.mp4');"></a>
+								<a href="javascript:videoPlay('video/logo.mp4');"></a>
+								<a href="javascript:videoPlay('video/logo.mp4');"></a>
 							</li>
 						</ul>
 					</div>
@@ -125,6 +125,13 @@
 					<a href="javascript:;" class="button next"><img src="img/next.png"></a>
 				</div>
 			</li>
+			<li class="item item1" style="background: #131846">
+				<div class="wrap" flex="cross:center">
+					<video id="lastV"width="100%" height="240" controls x5-playsinline playsinline webkit-playsinline poster="img/play2.png">
+						<source src="video/last.mp4" type="video/mp4">
+					</video>
+				</div>
+			</li>
 		</ul>
 	</div>
 	<!-- 视频播放弹窗 -->
@@ -132,7 +139,7 @@
 		<a href="javascript:;" class="close">X</a>
 		<div class="wrap" flex="cross:center">
 			<video width="100%" height="240" controls autoplay>
-				<source src="logo.mp4" type="video/mp4">
+				<source src="video/logo.mp4" type="video/mp4">
 			</video>
 		</div>
 	</div>
@@ -151,7 +158,7 @@
             next:'.next',
             direction: 'horizontal'
         });
-        // swiper.go(2);
+        swiper.go(3);
         var swipedIndex=0;
         swiper.on('swiped',function(i){
         	swipedIndex=i;
@@ -162,11 +169,15 @@
         	if(swipedIndex==0 || swipedIndex==2){
         		document.querySelector('#logoV').play();
         	}
+        	if(swipedIndex==5){
+        		document.querySelector('#lastV').play();
+        	}
     	};
         // 视频弹窗显示
         function videoPlay(vid){
         	document.querySelector('.fixed').style.display="block";
         	document.querySelector('.fixed video').setAttribute('src',vid);
+        	document.querySelector('.fixed video').play();
         }
         // 点击X关闭视频弹窗
         document.querySelector('.fixed .close').onclick=function(){
